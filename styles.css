@@ -2,6 +2,8 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    text-decoration: none;
+    color: inherit;
 }
 
 body{
@@ -21,6 +23,8 @@ body{
     padding: 10px;
 
 }
+
+
 
 .colored-text{
     color: orange;
@@ -183,10 +187,16 @@ header{
 
 .heart-meal{
     font-size: 20px;
-    color: navajowhite;
+    color: antiquewhite;
 }
 
+.active{
+    color: red;
+}
 
+a:is(:link, :active, :visited).active{
+    color: orange;
+  }
 /* MEDIA QUERIES */
 
 @media (max-width: 660px) {
