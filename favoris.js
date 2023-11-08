@@ -27,10 +27,9 @@ function deleteMealFromLs(index) {
         favoris.splice(index, 1);
         localStorage.setItem("favoris", JSON.stringify(favoris));
         // Rechargez la page ou mettez à jour votre interface ici
-        console.log("Élément supprimé avec succès !");
         location.reload();
     } else {
-        console.log("Index invalide !");
+
     }
 }
 
@@ -42,5 +41,4 @@ forEach(link =>{
         link.classList.add("active")
     }
 
-    console.log(link)
 })

@@ -9,7 +9,6 @@ async function getmealByName(){
     const resp = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchedMeal}`)
     const mealsArray = await resp.json();
     const meals = mealsArray.meals
-    console.log(meals)
     if(!meals){
         alert("This meal is not in our database")
     }
@@ -52,7 +51,6 @@ function performSearch(){
     blockCategories.addEventListener("click", (e)=>{
         e.preventDefault()
         const clickedCategory = e.target.id
-        console.log(clickedCategory)
 
         fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${clickedCategory}`)
         .then(resp => resp.json())
@@ -79,7 +77,6 @@ function performSearch(){
                     </div>`;
             });
         
-            console.log(meals);
         })
         
 
@@ -99,7 +96,6 @@ async function getrandomCategory(){
     const resp = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${randomCategory}`)
     const mealsArray = await resp.json();
     const meals = mealsArray.meals
-    console.log(meals)
     if(!meals){
         alert("This meal is not in our database")
     }
@@ -140,9 +136,7 @@ function addToFavorite(heartElement,strMeal, idMeal, strMealThumb) {
         deleteMealFromLs(idMeal)
         return
         
-        // console.log("classe inactive !!")
     }else if(heartElement.classList.contains("active")){
-        console.log("classe active!")
         // Ajouter le nouvel élément à la liste
         favoris.push(mealObject);
     
@@ -176,5 +170,4 @@ forEach(link =>{
         link.classList.add("active")
     }
 
-    console.log(link)
 })

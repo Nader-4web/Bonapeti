@@ -15,7 +15,6 @@ const favoris = JSON.parse(localStorage.getItem("favoris")) || [];
 
 function displayMeal(meal){
     const isFavori = favoris.some(favMeal => favMeal.idMeal.toString() === meal.idMeal);
-    console.log(isFavori)
     const heartClass = isFavori ? "fa-heart active" : "fa-heart";
     const header = document.getElementById("header");
     header.innerHTML+=
@@ -33,9 +32,8 @@ function displayMeal(meal){
 
     const instructions = document.querySelector(".instructions");
     instructions.innerHTML = meal.strInstructions
-    console.log(meal["strArea"])
 
-const ingredients = []
+    const ingredients = []
 
 for(let i =1; i < 20; i++){
     if(meal["strIngredient" + i]){
@@ -63,9 +61,7 @@ function addToFavorite(heartElement,strMeal, idMeal, strMealThumb) {
         deleteMealFromLs(idMeal)
         return
         
-        // console.log("classe inactive !!")
     }else if(heartElement.classList.contains("active")){
-        console.log("classe active!")
         // Ajouter le nouvel élément à la liste
         favoris.push(mealObject);
     
