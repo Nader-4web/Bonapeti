@@ -1,5 +1,10 @@
 const mealsInLs = JSON.parse(localStorage.getItem("favoris")) || [];
 
+if(mealsInLs == ""){
+    const noMealTitle = document.getElementById("title").innerHTML = `No <span id="text-orange">favorite</span> meals yet`
+    const coloredText = document.getElementById("text-orange");
+    coloredText.style.color = "orange"
+}
 const blockMain = document.querySelector(".block-main");
 blockMain.innerHTML = "";
 mealsInLs.forEach((el, index) => {

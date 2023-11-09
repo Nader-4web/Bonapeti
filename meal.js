@@ -17,6 +17,14 @@ function displayMeal(meal){
     const isFavori = favoris.some(favMeal => favMeal.idMeal.toString() === meal.idMeal);
     const heartClass = isFavori ? "fa-heart active" : "fa-heart";
     const header = document.getElementById("header");
+    const instructions = document.querySelector(".instructions");
+    const button = document.getElementById("see-more");
+    instructions.innerHTML = meal.strInstructions
+    // Si le texte instruction ne fait qu'une ligne, alors enlever le bouton "Read more"
+    if(instructions.clientHeight < "25"){
+        button.style.display ="none"
+    }
+
     header.innerHTML+=
     `<div class="block-photo">
         <img src="${meal.strMealThumb}" alt="" class="img-meal">
@@ -29,9 +37,6 @@ function displayMeal(meal){
             <i class="fa-solid fa-location-dot"></i>
             <span id="location">${meal.strArea}</span>
     </div>`
-
-    const instructions = document.querySelector(".instructions");
-    instructions.innerHTML = meal.strInstructions
 
     const ingredients = []
 
@@ -85,3 +90,28 @@ function deleteMealFromLs(idMeal){
     }
    
 }
+
+
+ function seeMore() {
+    const instructions = document.querySelector(".instructions");
+    const button = document.getElementById("see-more");
+
+    let isExpanded = false;
+
+    button.addEventListener("click", () => {
+        instructions.classList.toggle("see-instructions");
+
+        // Change le texte du bouton en fonction de l'état actuel
+        if (isExpanded) {
+            button.textContent = "Read more...";
+        } else {
+            button.textContent = "Read less";
+        }
+
+        // Inverse l'état actuel
+        isExpanded = !isExpanded;
+    });
+
+}
+
+seeMore();

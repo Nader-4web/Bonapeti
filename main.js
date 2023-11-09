@@ -11,6 +11,8 @@ async function getmealByName(){
     const meals = mealsArray.meals
     if(!meals){
         alert("This meal is not in our database")
+        location.reload();
+        
     }
     const blockMain = document.querySelector(".block-main");
     const favoris = JSON.parse(localStorage.getItem("favoris")) || [];
