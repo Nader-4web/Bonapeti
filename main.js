@@ -48,11 +48,32 @@ function performSearch(){
 }
 
 
+document.addEventListener("DOMContentLoaded", function() {
+    const categories = document.querySelectorAll(".category");
+
+    categories.forEach(category => {
+        category.addEventListener("click", function() {
+            // Supprimer la classe de tous les éléments
+            categories.forEach(otherCategory => {
+                otherCategory.classList.remove("active-category");
+            });
+
+            // Ajouter la classe à l'élément actuel
+            category.classList.add("active-category");
+        });
+    });
+});
+
+
  function getMealByCategory(){
-    const blockCategories = document.querySelector(".block-categories");
+    const blockCategories = document.querySelector(".categories");
     blockCategories.addEventListener("click", (e)=>{
         e.preventDefault()
         const clickedCategory = e.target.id
+
+        if(clickedCategory == ""){
+            return
+        }
 
         fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${clickedCategory}`)
         .then(resp => resp.json())
@@ -166,10 +187,10 @@ function deleteMealFromLs(idMeal){
 }
 
 const activePage = window.location.pathname;
-const navLinks = document.querySelectorAll("nav a").
-forEach(link =>{
+const navLinks = document.querySelectorAll("nav a");
+const home = document.querySelector("nav a .fa-heart")
+navLinks.forEach(link =>{
     if (link.href.includes(`${activePage}`)){
         link.classList.add("active")
     }
-
 })

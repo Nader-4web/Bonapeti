@@ -103,6 +103,7 @@ main{
 
 #see-more{
 font-family: roboto;
+font-size: 13px;
 background-color: orange;
 cursor: pointer;
 padding-inline: 5px;

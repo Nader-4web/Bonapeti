@@ -7,8 +7,8 @@
 }
 
 body{
-    display: flex;
-    justify-content: center;
+    /* display: flex;
+    justify-content: center; */
     /* font-family: agbalumo, sans-serif; */
     font-weight: 200;
     font-family: 'Playpen Sans', cursive;
@@ -19,11 +19,9 @@ body{
     flex-direction: column;
     align-items: center;
     margin-top: 30px;
-    position: relative;
     padding: 10px;
 
 }
-
 
 
 .colored-text{
@@ -34,15 +32,21 @@ header{
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 50px;
+    margin-top: 50px;
 }
 
 .block-search{
     margin-top: 30px;
     position: relative;
+    width: 50%;
+    max-width: 300px;
 }
 
 #searchbar{
+    width: 100%;
     border-radius: 20px;
+    border: none;
     padding: 5px;
     padding-inline-start: 28px;
     padding-top: 6px;
@@ -58,76 +62,79 @@ header{
     
 }
 
+#category-text{
+    font-weight: 500;
+}
+
 .block-categories{
+    margin: 0;
+    overflow: hidden;
+    margin-bottom: 50px;
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    margin-top: 50px;
-    margin-bottom: 100px;
+    /* align-items: center; */
+    flex-direction: column;
+    margin: 20px;
+
     
+}
+
+.categories{
+    display: flex;
+    white-space: nowrap;
+    overflow-x: scroll;
+    /* scroll-snap-type: x mandatory; */
+    align-items: center;
+    padding: 10px;
+}
+
+.categories_img-title  p{
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+
+.categories_img-title{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+
+}
+
+.active-category{
+    border: 3px solid orange;
+}
+
+.category:hover{
+    border: 3px solid orange;
+    cursor: pointer;
+
+}
+
+.categories_img-title img{
+    width: 70px;
+    border-radius: 50%;
+}
+
+::-webkit-scrollbar {
+    width: 0;
 }
 
 .block-categories a{
     text-decoration: none;
-    color: inherit;
+    color: inherit; 
 }
 
 
-.category{
-    padding: 10px;
-    border: 1px solid black;
-    border-radius: 20px;
-    margin-top: 5px;
-    font-weight: 700;
-    margin: 5px;
-}
-
-#beef{
-    background-color: burlywood;
-}
-#chicken{
-    background-color: bisque;
-}
-#dessert{
-    background-color: #7B3F00;
-}
-#lamb{
-    background-color: blanchedalmond;
-}
-#miscellaneous{
-    background-color: azure;
-}
-#pasta{
-    background-color: beige;
-}
-#pork{
-    background-color: pink;
-}
-#seafood{
-    background-color: #24b4ab;
-}
-#side{
-    background-color: #9fe3c1;
-}
-#starter{
-    background-color: #93a67b;
-}
-#vegan{
-    background-color: #22bb88;
-}
-
-#vegetarian{
-    background-color: #22aa00;
-}
-#breakfast{
-    background-color: #955B3D;
-}
-#goat{
-    background-color: antiquewhite;
-}
 .block-main{
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     width: 100%;
     margin-bottom: 55px ;
     flex-wrap: wrap;
@@ -135,7 +142,7 @@ header{
 }
 
 .block-meal{
-    margin-bottom: 10px;
+
 }
 
 
@@ -155,7 +162,11 @@ header{
 }
 
 .name-meal{
-    font-size: 13px;
+    width: 206px;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .navbar{
@@ -189,6 +200,7 @@ header{
 .heart-meal{
     font-size: 20px;
     color: antiquewhite;
+    margin-left: 5px;
 }
 
 .active{
@@ -202,18 +214,41 @@ a:is(:link, :active, :visited).active{
 
 @media (max-width: 660px) {
     .block-meal{
-        max-width: 300px;
+        max-width: 48%;
+        margin-bottom: 5px;
+      
+    }
+    .name-meal{
+        font-size: 12px;
+        width: 150px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .block-main{
+        justify-content: space-around;
     }
 }
 
 @media (min-width: 660px) {
     .block-meal{
-        width: 48%;
+        width: 30%;
+        margin: 5px;
     }
 }
 
 @media (min-width: 900px) {
     .block-meal{
-        width: 30%;
+        width: 20%;
+        justify-content: space-between;
+    }
+}
+
+
+@media (min-width: 1140px) {
+    .categories{
+
+        justify-content: center;
+       
     }
 }
