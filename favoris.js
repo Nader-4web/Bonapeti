@@ -36,7 +36,6 @@ mealsInLs.forEach((el, index) => {
 function deleteMealFromLs(index) {
 
     if(confirm("Erase this meal from favorite ?")){
-        console.log("true")
         let favoris = JSON.parse(localStorage.getItem("favoris")) || [];
         // Vérifiez si l'index est valide
         if (index >= 0 && index < favoris.length) {
