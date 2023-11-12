@@ -115,6 +115,7 @@ a:is(:link, :active, :visited).active{
     position: relative;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 11px 1px;
     border-radius: 10px;
+    width: 48%;
 }
 
 .heart-meal{
@@ -122,16 +123,7 @@ a:is(:link, :active, :visited).active{
     color: red;
 }
 
-
-@media (max-width: 660px) {
-    .block-meal{
-        max-width: 300px;
-        width: 48%;
-    }
-    
-}
-
-@media (min-width: 660px) {
+@media (min-width: 700px) {
 
     .wrapper{
         margin-top: 200px;
