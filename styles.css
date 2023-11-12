@@ -120,6 +120,7 @@ header{
 .categories_img-title img{
     width: 70px;
     border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.6) 0px 0px 15px 2px;
 }
 
 ::-webkit-scrollbar {
@@ -139,9 +140,12 @@ header{
     margin-bottom: 55px ;
     flex-wrap: wrap;
     gap: 5px;
+    padding: 10px;
 }
 
 .block-meal{
+border-radius: 10px;
+box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 11px 1px;
 
 }
 
@@ -201,6 +205,7 @@ header{
     font-size: 20px;
     color: antiquewhite;
     margin-left: 5px;
+    cursor: pointer;
 }
 
 .active{
@@ -212,7 +217,7 @@ a:is(:link, :active, :visited).active{
   }
 /* MEDIA QUERIES */
 
-@media (max-width: 660px) {
+@media (max-width: 829px) {
     .block-meal{
         max-width: 48%;
         margin-bottom: 5px;
@@ -230,10 +235,33 @@ a:is(:link, :active, :visited).active{
     }
 }
 
-@media (min-width: 660px) {
+@media (min-width: 600px) {
+
+    #title-app{
+        margin-right: auto;
+        font-size: 40px;
+    }
+
+    header{
+        padding-inline: 50px;
+        margin-top: 76px;
+    }
     .block-meal{
         width: 30%;
         margin: 5px;
+    }
+    .navbar{
+        position: absolute;
+        top: 30px;
+        width: fit-content;
+        height: fit-content;
+        right: 30px;
+        box-shadow: inherit;
+        padding: 0;
+    }
+    .navbar-elements{
+        margin: 50px;
+        margin: 50px 50px 0px 0;
     }
 }
 

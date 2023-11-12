@@ -40,7 +40,7 @@ async function getmealByName(){
 function performSearch(){
     const searchbar = document.getElementById("searchbar")
     searchbar.addEventListener("keydown", (e)=>{
-        if (e.key === "Enter"){
+        if (e.key === "Enter"){ 
             getmealByName()
         }
     })
@@ -164,11 +164,9 @@ function addToFavorite(heartElement,strMeal, idMeal, strMealThumb) {
         favoris.push(mealObject);
     
         // Stocker la liste mise à jour dans le localStorage
-        localStorage.setItem("favoris", JSON.stringify(favoris));
-      
+        localStorage.setItem("favoris", JSON.stringify(favoris)); 
     
-    }
-    
+    }  
     
 }
 
