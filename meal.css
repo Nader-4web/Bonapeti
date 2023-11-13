@@ -25,8 +25,45 @@ body{
 }
 
 .block-photo{
-    /* margin-top: -120px; */
+   position: relative;
 }
+
+.block-play{
+    position: absolute;
+    top: 42%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* cursor: pointer; */
+    z-index: 999;
+}
+
+#meal-name-youtube{
+    position: absolute;
+    padding: 5px;
+    color: white;
+    z-index: 999;
+    font-weight: 500;
+    font-size: 13px;
+}
+
+.block-play i{
+    color: red;
+    font-size: 50px;
+    background-color: black;
+    padding-inline: 5px;
+    border-radius: 5px;
+   
+}
+
+#overlay{
+    background-color: #000;
+    height: 100%;
+    mix-blend-mode: darken;
+    opacity: .3;
+    position: absolute;
+    width: 100%;
+}
+
 
 .img-meal{
     width: 100%;
@@ -37,7 +74,7 @@ body{
     justify-content: space-between;
     padding: 20px;
     font-weight: 500;
-    margin-top: -76px;
+    margin-top: -71px;
     margin-bottom: 10px;
     position: relative;
     background-color: white;
@@ -128,4 +165,53 @@ padding-inline: 5px;
     color: inherit;
     font-weight: 500;
     color: rgba(0, 0, 0, 0.8);
+}
+
+.colored-text{
+    color: orange;
+}
+
+#title-app{
+    position: absolute;
+}
+
+
+@media (min-width: 700px) {
+
+    #title-app{
+        /* position: absolute; */
+        top: 76px;
+        left: 50px;
+        font-size: 40px;
+    }
+
+    #wrapper{
+        margin-top: 200px;
+    }
+
+    #title-app{
+        margin-right: auto;
+        font-size: 40px;
+    }
+
+    header{
+        margin-top: 76px;
+    }
+    .block-meal{
+        width: 30%;
+        margin: 5px;
+    }
+    .navbar{
+        position: absolute;
+        top: 30px;
+        width: fit-content;
+        height: fit-content;
+        right: 30px;
+        box-shadow: inherit;
+        padding: 0;
+    }
+    .navbar-elements{
+        margin: 50px;
+        margin: 50px 50px 0px 0;
+    }
 }

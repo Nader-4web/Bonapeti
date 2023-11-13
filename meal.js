@@ -25,8 +25,15 @@ function displayMeal(meal){
         button.style.display ="none"
     }
 
+
     header.innerHTML+=
     `<div class="block-photo">
+
+    <div id="block-youtube">
+        <div id="meal-name-youtube">Watch video instructions for ${meal.strMeal}</div>
+            <a href="${meal.strYoutube}"><div class="block-play"><i class="fa-brands fa-youtube"></i></div></a>
+            <div id="overlay"></div>
+    </div>
         <img src="${meal.strMealThumb}" alt="" class="img-meal">
     </div>
         <div class="block-name-heart">
@@ -37,6 +44,11 @@ function displayMeal(meal){
             <i class="fa-solid fa-location-dot"></i>
             <span id="location">${meal.strArea}</span>
     </div>`
+
+    if(meal.strYoutube == ""){
+        const blockYoutube = document.getElementById("block-youtube");
+        blockYoutube.remove()
+    }
 
     const ingredients = []
 
