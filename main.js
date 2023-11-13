@@ -193,6 +193,6 @@ navLinks.forEach(link =>{
     }
 })
 
-if(activePage == "/"){
+if(activePage == "/Bonapeti/" || activePage == "/"){
     favoris.classList.remove("active")
 }
