@@ -123,6 +123,10 @@ a:is(:link, :active, :visited).active{
     color: red;
 }
 
+.inactive{
+    color: inherit;
+}
+
 @media (min-width: 700px) {
 
     .wrapper{

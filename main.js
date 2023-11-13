@@ -186,9 +186,13 @@ function deleteMealFromLs(idMeal){
 
 const activePage = window.location.pathname;
 const navLinks = document.querySelectorAll("nav a");
-const home = document.querySelector("nav a .fa-heart")
+const favoris = document.querySelectorAll("nav a")[1]
 navLinks.forEach(link =>{
     if (link.href.includes(`${activePage}`)){
         link.classList.add("active")
     }
 })
+
+if(activePage == "/"){
+    favoris.classList.remove("active")
+}
